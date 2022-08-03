@@ -12,7 +12,7 @@
     <div class="col mb-2">
         <div class="card shadow-sm position-relative" >
             <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
-                <a class="text-decoration-none text-light" href="{% url 'category' post.category %}">{{post.category}}</a>
+                <a class="text-decoration-none text-light" href="{% url 'category' post.category|slugify %}">{{post.category}}</a>
                 <!-- <span class="visually-hidden">unread messages</span> -->
               </span>
             <div class="card-header bg-dark text-white" style="min-height: 60px;">

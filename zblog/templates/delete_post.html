@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Blog Post!
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>Delete Post..</h1><br><br>
+        <h3>Delete: {{post.title}}</h3>
+        <form method="POST">{% csrf_token %}
+            <h5><strong>Are you sure?!</strong></h5><br>
+            <button class="btn btn-danger">Delete Post</button>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    {% else %}
+        <p style="color:red;">You're not authorized..</p>
+    {% endif %}
+
+{% endblock %}

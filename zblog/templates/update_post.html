@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Edit Blog Post!
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <div>
+        <h1>Update Post..</h1><br><br>
+        <form method="POST">{% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-primary" type="submit" >Update</button>
+            <a href="{% url 'home' %}" class="btn btn-secondary" >Cancel</a>
+        </form> 
+    </div>
+    {% else %}
+    <p style="color:red;">You're not authorized..</p>
+    {% endif %}
+
+    
+{% endblock %}
+

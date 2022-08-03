@@ -10,7 +10,9 @@
     <h3><i>{{post.body|safe}}</i></h3>
     <a href="{% url 'home' %}" class="btn btn-sm btn-outline-secondary">Back</a>
     {% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
         <a href="{% url 'updatepost' post.pk %}" class="btn btn-sm btn-outline-warning">Edit</a>
         <a href="{% url 'deletepost' post.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+        {% endif %}
     {% endif %}
 {% endblock %}

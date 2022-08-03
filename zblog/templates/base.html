@@ -35,7 +35,7 @@
                   </a>
                   <ul class="dropdown-menu">
                     {% for cat in cat_menu %}
-                    <li><a class="dropdown-item" href="{% url 'category' cat|slugify %}">{{cat}}</a></li>
+                    <li><a class="dropdown-item" href="{% url 'category' cat|slugify %}">{{cat|capfirst}}</a></li>
                     {% endfor %}
                   </ul>
                 </li>
@@ -67,6 +67,12 @@
       </nav>
     <br>
     <div class="container">
+      {% if user.is_authenticated %}
+     <div style="float: right;">
+      <small>Welcome <strong>{{user.first_name}} {{user.last_name}}</strong></small>
+     </div>
+      {% endif %}
+      
         {% block content %}
         {% endblock %}
         

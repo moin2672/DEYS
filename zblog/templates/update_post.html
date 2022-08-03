@@ -10,8 +10,8 @@
         <h1>Update Post..</h1><br><br>
         <form method="POST">{% csrf_token %}
             {{form.as_p}}
-            <button class="btn btn-primary" type="submit" >Update</button>
-            <a href="{% url 'home' %}" class="btn btn-secondary" >Cancel</a>
+            <button class="btn btn-sm btn-primary" type="submit" >Update Post</button>
+            <a href="{% url 'home' %}" class="btn btn-sm btn-secondary" >Cancel</a>
         </form> 
     </div>
     {% else %}

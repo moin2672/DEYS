@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  Create a new Blog Post!
+  Create a new Blog Category!
 {% endblock %}
 
 {% block content %}
   {% if user.is_authenticated %}
-    <h1>Add Post..</h1><br><br>
+    <h1>Add Category..</h1><br><br>
     <form method="POST">{% csrf_token %}
       {{form.as_p}}
-      <button class="btn btn-sm btn-primary" type="submit">Add Post</button>
+      <button class="btn btn-sm btn-primary" >Add Category</button>
       <a href="{% url 'home' %}" class="btn btn-sm btn-secondary">Cancel</a>
     </form>
   {% else %}

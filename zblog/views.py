@@ -1,6 +1,6 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from zblog.models import Post
+from zblog.models import Category, Post
 from .forms import PostForm, EditForm
 
 class HomeView(ListView):
@@ -31,3 +31,11 @@ class PostDeleteView(DeleteView):
     model=Post
     template_name ="delete_post.html"
     success_url= reverse_lazy('home')
+
+
+class CategoryCreateView(CreateView):
+    model=Category
+    # form_class = PostForm
+    template_name ="add_category.html"
+    fields = '__all__'
+    # fields = ('title', 'body')

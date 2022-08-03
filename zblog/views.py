@@ -1,3 +1,5 @@
+from urllib import request
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from zblog.models import Category, Post
@@ -39,3 +41,7 @@ class CategoryCreateView(CreateView):
     template_name ="add_category.html"
     fields = '__all__'
     # fields = ('title', 'body')
+
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats)
+    return render(request, 'categories.html', {'cats':cats.title(),'category_posts':category_posts})

@@ -12,7 +12,21 @@
       <button class="btn btn-sm btn-primary" type="submit">Add Post</button>
       <a href="{% url 'home' %}" class="btn btn-sm btn-secondary">Cancel</a>
     </form>
+
+    <!-- <script>
+     var name = "{{user.username}}"
+     document.getElementById("author_id").value=name
+    </script> -->
+
+    <script>
+      var name = "{{user.id}}"
+      document.getElementById("id_author").selectedIndex = name
+      document.getElementById("id_author").disabled = true
+    </script>
+
   {% else %}
     <p style="color:red;">You're not authorized..</p>
   {% endif %}
+
 {% endblock %}
+

@@ -1,0 +1,25 @@
+(.venv) PS C:\Users\Moiz\Downloads\Projects\Django\DEYS> python manage.py dbshell
+CommandError: You appear not to have the 'sqlite3' program installed or on your path.
+(.venv) PS C:\Users\Moiz\Downloads\Projects\Django\DEYS> python manage.py dbshell
+CommandError: You appear not to have the 'sqlite3' program installed or on your path.
+(.venv) PS C:\Users\Moiz\Downloads\Projects\Django\DEYS> python manage.py dbshell
+SQLite version 3.39.2 2022-07-21 15:24:47
+Enter ".help" for usage hints.
+sqlite> .tables
+auth_group                  django_content_type       
+auth_group_permissions      django_migrations
+auth_permission             django_session
+auth_user                   zblog_category
+auth_user_groups            zblog_post
+auth_user_user_permissions  zblog_post_likes
+django_admin_log
+sqlite> .header on
+sqlite> .mode column
+sqlite> pragma table_info('zblog_post_likes')
+   ...> ;
+cid  name     type     notnull  dflt_value  pk
+---  -------  -------  -------  ----------  --
+0    id       INTEGER  1                    1
+1    post_id  bigint   1                    0
+2    user_id  INTEGER  1                    0
+sqlite>  

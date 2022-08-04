@@ -10,4 +10,6 @@ urlpatterns = [
     path('addcategory/', views.CategoryCreateView.as_view(), name="addcategory"),
     path('category/<str:cats>/', views.CategoryView, name="category"),
     path('categorylist', views.CategoryListView, name="categorylist"),
+    path('like/<int:pk>', views.LikeView, name="like"),
+    
 ]
